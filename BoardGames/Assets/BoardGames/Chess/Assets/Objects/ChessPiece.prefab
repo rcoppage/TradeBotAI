@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4654512330719475994}
   - component: {fileID: 3171134820509638591}
+  - component: {fileID: -5769277169026548255}
   m_Layer: 0
   m_Name: ChessPiece
   m_TagString: Untagged
@@ -27,7 +28,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -2}
-  m_LocalScale: {x: 1.75, y: 1.75, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -84,3 +85,29 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &-5769277169026548255
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7963253015780630590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de09b75fcf389904a9f2dcefd5577757, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controller: {fileID: 0}
+  movePlate: {fileID: 0}
+  black_queen: {fileID: 21300000, guid: 779b458a2ca2d8446ae4146f6485dee8, type: 3}
+  black_king: {fileID: 21300000, guid: 6abb38311b2aa544e9a08701e4c5ba0e, type: 3}
+  black_knight: {fileID: 21300000, guid: ff61cd83cbbb5e141ad70075be1bb02a, type: 3}
+  black_bishop: {fileID: 21300000, guid: a3e2db7dea4a13e4cb569129fb136337, type: 3}
+  black_rook: {fileID: 21300000, guid: d18fd89866f472d4ebb41862bc5f0b6f, type: 3}
+  black_pawn: {fileID: 21300000, guid: 141fb3e18841cd44d931267a69b2f34e, type: 3}
+  white_queen: {fileID: 21300000, guid: 233fb7d4bd4344d49ad7900f128e5987, type: 3}
+  white_king: {fileID: 21300000, guid: 8a1069744e149ab43b5ad8422ed8a06e, type: 3}
+  white_knight: {fileID: 21300000, guid: 6ae585c26b699c64ab8e498782b43023, type: 3}
+  white_bishop: {fileID: 21300000, guid: a95c1578f348d4147bae32c8246bc8f9, type: 3}
+  white_rook: {fileID: 21300000, guid: 7165f9ae5dce1c444aad04034da19add, type: 3}
+  white_pawn: {fileID: 21300000, guid: a2894a5a072f57d4d9074ee5423b79a4, type: 3}
