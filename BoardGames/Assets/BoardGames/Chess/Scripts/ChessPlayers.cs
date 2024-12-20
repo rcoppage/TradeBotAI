@@ -23,6 +23,9 @@ public class ChessPlayers : MonoBehaviour
 
         controller = GameObject.FindGameObjectWithTag("GameController");
 
+        // Set the size of the piece
+        this.transform.localScale = new Vector3(1.6f, 1.6f, 1.0f); // Adjust the scale as needed
+
         //take the instantiated location and adjust the transform
         SetCoords();
 
@@ -48,11 +51,12 @@ public class ChessPlayers : MonoBehaviour
         float x = xBoard;
         float y = yBoard;
 
-        x *= 0.66f;
-        y *= 0.66f;
+        x *= 0.785f;// Adjust this factor to control spacing
+        y *= 0.785f;
 
-        x += -2.3f;
-        y += -2.3f;
+        // Offset the positions to center the pieces in the squares
+        x += -2.78f; // Adjust this offset to shift hotizontally
+        y += -2.65f; // Adjust this offset to shift vertically
 
         this.transform.position = new Vector3(x, y, -1.0f);
     }
