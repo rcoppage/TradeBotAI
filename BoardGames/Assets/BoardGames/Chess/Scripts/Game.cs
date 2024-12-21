@@ -1,6 +1,8 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Collections;
+using Unity.Mathematics;
 using UnityEngine;
 
 public class Game : MonoBehaviour
@@ -53,7 +55,7 @@ public class Game : MonoBehaviour
             GameObject obj = Instantiate(chesspiece, new Vector3(0, 0, -1), Quaternion.identity);
             ChessPlayers chessplayer = obj.GetComponent<ChessPlayers>();
             chessplayer.name = name;
-            chessplayer.setXBoard(x);
+            chessplayer.SetXBoard(x);
             chessplayer.SetYBoard(y);
             chessplayer.Activate();
             return obj;
@@ -62,5 +64,20 @@ public class Game : MonoBehaviour
         public void SetPosition(GameObject obj) {
             ChessPlayers chessplayer = obj.GetComponent<ChessPlayers>();
             positions[chessplayer.GetXBoard(), chessplayer.GetYBoard()] = obj;
+        }
+
+        public void SetPositionEmpty(int x, int y) {
+            positions[x, y] = null;
+        }
+
+        public GameObject GetPosition(int x, int y) {
+            return positions[x, y];
+        }
+
+        public bool PositionOnBoard(int x, int y) {
+            if (x < 0 || y < 0 || x >= positions.GetLength(0) || y >= positions.GetLength(1)) {
+                return true;
+            }
+            return false;
         }
 }

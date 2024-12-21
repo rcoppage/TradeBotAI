@@ -70,11 +70,25 @@ public class ChessPlayers : MonoBehaviour
         return yBoard;
     }
 
-    public void setXBoard(int x) {
+    public void SetXBoard(int x) {
         xBoard = x;
     }
 
     public void SetYBoard(int y) {
         yBoard = y;
+    }
+
+    //Mouse Events
+    private void OnMouseUp() {
+        DestroyMovePlates();
+        
+        InitiateMovePlates();
+    }
+
+    public void DestroyMovePlates() {
+        GameObject[] movePlates = GameObject.FindGameObjectsWithTag("MovePlate");
+        for(int i = 0; i< movePlates.Length; i++){
+            Destroy(movePlates[i]);
+        }
     }
 }
