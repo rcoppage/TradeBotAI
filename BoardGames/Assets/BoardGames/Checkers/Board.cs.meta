@@ -1,2 +1,15 @@
 fileFormatVersion: 2
 guid: 361b729e94f484e3182d532eae9b55eb
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - player1PiecePrefab: {fileID: 4230853528764048953, guid: 7203d5ea0cd7d423c9232af81757bdbd, type: 3}
+  - player2PiecePrefab: {fileID: 1635134110828434927, guid: 9008af31e567440c2a7211fbd776309e, type: 3}
+  - player1KingPrefab: {fileID: 1153497360291873051, guid: 935d96d7082854bea8653d051edd04c8, type: 3}
+  - player2KingPrefab: {fileID: 5844615288467880254, guid: fc7d0cabe8f704e81b4418172837ddee, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
