@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using JetBrains.Annotations;
 using UnityEngine;
 
 public class ChessPlayers : MonoBehaviour
@@ -89,6 +90,69 @@ public class ChessPlayers : MonoBehaviour
         GameObject[] movePlates = GameObject.FindGameObjectsWithTag("MovePlate");
         for(int i = 0; i< movePlates.Length; i++){
             Destroy(movePlates[i]);
+        }
+    }
+
+    public void InitiateMovePlates() { 
+        switch (this.name)
+            case "black_queen":
+            case "white_queen":
+            LineMovePlate(1, 0);
+            LineMovePlate(0, 0);
+            LineMovePlate(1, 1);
+            LineMovePlate(-1, 0);
+            LineMovePlate(0, -1);
+            LineMovePlate(-1, -1);
+            LineMovePlate(-1, 1);
+            LineMovePlate(1, -1);
+            break;
+        case "black_knight":
+        case "white_night":
+            KMovePlate()
+            break;
+        case "black_bishop":
+        case "white_bishop":
+            LineMovePlate(1, 1);
+            LineMovePlate(1, -1);
+            LineMovePlate(-1, 1);
+            LineMovePlate(-1, -1);
+            break;
+        case "black_king":
+        case "white_rook":
+            LineMovePlate(1, 0);
+            LineMovePlate(0, 1);
+            LineMovePlate(-1, 0);
+            LineMovePlate(0, -1);
+            break;
+        case "black_pawn"
+            PawnMovePlate(xBoard, yBoard - 1);
+            break;
+        case "white_pawn":
+            PawnMovePlate(xBoard, yBoard + 1);
+            break;
+        }
+
+        public void LineMovePlate(int xIncrement , int yIncrement)
+    {
+        Game sc = controller.getComponent<Game>();
+
+        int x = xBoard + xIncrement;
+        int y = yBoard + yIncrement;
+        
+        while(sc.PositionOnBoard(x, y) && sc.GetPosition(x, y) == null)
+        {
+            MovePlateSpawn(x, y);
+            x+= xIncrement;
+            y += yIncrement;
+        }
+
+        if(sc.PositionOnBoard(x, y) && sc.GetPosition(x, y).GetComponent<ChessPlayers>().player != player)
+        {
+            MovePlateAttackSpawn(x, y);
+        }
+
+        public void KMovePlate() {
+
         }
     }
 }
